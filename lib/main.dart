@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MyApp());
@@ -182,4 +184,17 @@ class MyApp extends StatelessWidget {
           ),
         ));
   }
+}
+
+Future sendSuggestion(title) {
+    return http.post(
+      Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'sugestao': title,
+        'melhorias': title,
+      }),
+   );
 }
