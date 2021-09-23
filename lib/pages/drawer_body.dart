@@ -21,7 +21,7 @@ class _DrawerBodyState extends State<DrawerBody> {
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               image: DecorationImage(
-                image: AssetImage("assets/Profile_Icon.png"),
+                image: AssetImage("assets/profile.png"),
               ),
             ),
           ),
