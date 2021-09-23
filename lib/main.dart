@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomRight,
-              end: Alignment(0.9, 0.1),
+              end: Alignment(0.0, 0.0),
               colors: <Color>[
-                Colors.white,
+                Colors.deepPurpleAccent,
                 Colors.deepPurple
               ],
             ),
@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Expanded(
               child: Text(
-                'Assunto :',
+                'Sugestões :',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 20.0,
@@ -95,6 +95,7 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                   horizontal: 20, vertical: 8),
               child: TextFormField(
+                style: const TextStyle(color: Colors.white),
                 minLines: 2,
                 maxLines: 8,
                 controller: sugestaocontroller,
@@ -113,7 +114,7 @@ class MyApp extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: 20, vertical: 8),
               child: Text(
-                'Descrição :',
+                'Melhorias :',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 18.0,
@@ -126,6 +127,7 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                   horizontal: 20, vertical: 8),
               child: TextFormField(
+                style: const TextStyle(color: Colors.white),
                 minLines: 5,
                 maxLines: 10,
                 controller: melhoriacontroller,
