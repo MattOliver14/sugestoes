@@ -1,15 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:sugestao/pages/MainDrawer.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-
-class MyApp extends StatelessWidget {
+class SugestoesPage extends StatelessWidget {
   //const MyApp({Key? key}) : super(key: key);
 
   final sugestaocontroller = TextEditingController();
@@ -21,28 +13,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.deepPurple,
-            //leading: Image.asset('assets/Sorriso.png'),
-            centerTitle: true,
-            title: Text(
-              "Helpers Delivery",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 28),
-            ),
-          ),
           body: Form(
             key: _formKey,
             child: Container(
-              padding: EdgeInsets.only(top: 15, left: 40, right: 40),
+              padding: EdgeInsets.only(top: 2, left: 40, right: 40),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.bottomRight,
+                  begin: Alignment.topLeft,
                   end: Alignment(0.0, 0.0),
-                  colors: <Color>[Colors.deepPurpleAccent, Colors.deepPurple],
+                  colors: <Color>[
+                    Colors.deepOrange,
+                    Colors.deepPurple,
+                  ],
                 ),
                 image: DecorationImage(
-                  image: AssetImage("assets/hero-circles2.png"),
+                  image: AssetImage("assets/Bolhas.png"),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -52,7 +37,7 @@ class MyApp extends StatelessWidget {
                   child: Image.asset("assets/ideias.png"),
                 ),
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -81,7 +66,7 @@ class MyApp extends StatelessWidget {
                           )
                         ])),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -99,7 +84,7 @@ class MyApp extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   child: TextFormField(
                     style: const TextStyle(color: Colors.white),
                     validator: (value) {
@@ -114,7 +99,7 @@ class MyApp extends StatelessWidget {
                     decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.black, width: 2)),
+                          BorderSide(color: Colors.black, width: 2)),
                       border: OutlineInputBorder(),
                       hintText: 'Escreva:',
                       hintStyle: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -136,7 +121,7 @@ class MyApp extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   child: TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -151,7 +136,7 @@ class MyApp extends StatelessWidget {
                     decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.black, width: 2)),
+                          BorderSide(color: Colors.black, width: 2)),
                       border: OutlineInputBorder(),
                       hintText: 'Escreva:',
                       hintStyle: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -161,7 +146,7 @@ class MyApp extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      left: 20, top: 20, right: 20, bottom: 40),
+                      left: 20, top: 10, right: 20, bottom: 40),
                   child: Row(
                     children: <Widget>[
                       const Spacer(),
@@ -173,9 +158,13 @@ class MyApp extends StatelessWidget {
                               print(melhoriacontroller.text);
                             }
                           },
-                          label: const Text('Enviar'),
-                          icon: const Icon(Icons.send),
-                          backgroundColor: Colors.deepPurple,
+                          label: const Text('Enviar',style: TextStyle(
+                            fontSize: 18.0,
+                            color: Colors.deepPurple,
+                            fontWeight: FontWeight.w500,
+                          ),),
+                          icon: const Icon(Icons.send, color: Colors.deepPurple),
+                          backgroundColor: Colors.white,
                         ),
                       ),
                     ],
@@ -186,17 +175,4 @@ class MyApp extends StatelessWidget {
           ),
         ));
   }
-}
-
-Future sendSuggestion(title) {
-    return http.post(
-      Uri.parse('https://jsonplaceholder.typicode.com/albums'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{
-        'sugestao': title,
-        'melhorias': title,
-      }),
-   );
 }

@@ -90,8 +90,6 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/helpers.jfif
-    - bolhas.png
+    - Profile_Icon.png
     - ideias.png
-    - assets/sorriso.png
-    - hero-circles2.png
+    - Bolhas.png
