@@ -2,9 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:sugestao/model/sugestao_model.dart';
-import 'package:sugestao/repositorio/repo.dart';
 import 'package:sugestao/view/drawer_menu.dart';
 
 class HomePage extends StatefulWidget {
