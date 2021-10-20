@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'marketing.dart';
+
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key key}) : super(key: key);
 
@@ -12,8 +14,8 @@ class NavDrawer extends StatelessWidget {
           const UserAccountsDrawerHeader(
             accountName: Text(
               'Janna da Silva',
-              style: TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold),
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
             accountEmail: Text(
               'Janna@Helpersbrasil.com.br',
@@ -31,27 +33,51 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.account_circle, color: Colors.indigo),
-            title: const Text('Home', style: TextStyle(color: Colors.black, fontSize: 17)),
+            title: const Text('Home',
+                style: TextStyle(color: Colors.black, fontSize: 17)),
             onTap: () => {Navigator.of(context).pushNamed('/Perfil')},
           ),
           ListTile(
-            leading: const Icon(Icons.cloud_upload_rounded,color: Colors.blueGrey),
-            title: const Text('Sincronizar',style: TextStyle(color: Colors.black, fontSize: 17)),
+            leading:
+                const Icon(Icons.lightbulb,color: Colors.amberAccent),
+            title: const Text('Ideias de Markerting',
+                style: TextStyle(color: Colors.black, fontSize: 17)),
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Marketing()),
+              )
+            },
+          ),
+          ListTile(
+            leading:
+                const Icon(Icons.cloud_upload_rounded, color: Colors.blueGrey),
+            title: const Text('Sincronizar',
+                style: TextStyle(color: Colors.black, fontSize: 17)),
             onTap: () => {},
           ),
           ListTile(
-            leading: const Icon(Icons.message,color: Colors.green),
-            title: const Text('Mensagem',style: TextStyle(color: Colors.black, fontSize: 17),),
+            leading: const Icon(Icons.message, color: Colors.green),
+            title: const Text(
+              'Mensagem',
+              style: TextStyle(color: Colors.black, fontSize: 17),
+            ),
             onTap: () => {Navigator.of(context).pushNamed('/DailyReport')},
           ),
           const ListTile(
-            leading: Icon(Icons.settings,color: Colors.black),
-            title: Text('Configuração',style: TextStyle(color: Colors.black, fontSize: 17),),
+            leading: Icon(Icons.settings, color: Colors.black),
+            title: Text(
+              'Configuração',
+              style: TextStyle(color: Colors.black, fontSize: 17),
+            ),
             //onTap: () => {Navigator.of(context).pushNamed('/TestDba')},
           ),
           ListTile(
-            leading: const Icon(Icons.exit_to_app,color: Colors.red),
-            title: const Text('Logout',style: TextStyle(color: Colors.black, fontSize: 17),),
+            leading: const Icon(Icons.exit_to_app, color: Colors.red),
+            title: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.black, fontSize: 17),
+            ),
             onTap: () => {
               Navigator.of(context).pushNamedAndRemoveUntil(
                   '/Login', (Route<dynamic> route) => false)
