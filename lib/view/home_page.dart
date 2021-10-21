@@ -39,10 +39,7 @@ class _HomePageState extends State<HomePage> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment(0.0, 0.0),
-              colors: <Color>[
-                Colors.deepOrange,
-                Colors.deepPurple,
-              ],
+              colors: <Color>[Color(0xFF2A508D), Color(0xFF203D6D)],
             ),
             image: DecorationImage(
               image: AssetImage("assets/bolhas.png"),
@@ -118,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                 controller: sugestaocontroller,
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black, width: 2)),
+                      borderSide: BorderSide(color: Colors.white, width: 2)),
                   border: OutlineInputBorder(),
                   hintText: 'Escrever: ',
                   hintStyle: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -153,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                 controller: melhoriacontroller,
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black, width: 2)),
+                      borderSide: BorderSide(color: Colors.white, width: 2)),
                   border: OutlineInputBorder(),
                   hintText: 'Escrevar: ',
                   hintStyle: TextStyle(fontSize: 16.0, color: Colors.white),
@@ -187,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       icon: const Icon(Icons.send, color: Colors.deepPurple),
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.white70,
                     ),
                   ),
                 ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sugestao/view/home_page.dart';
 
 import 'marketing.dart';
 
@@ -35,7 +36,12 @@ class NavDrawer extends StatelessWidget {
             leading: const Icon(Icons.account_circle, color: Colors.indigo),
             title: const Text('Home',
                 style: TextStyle(color: Colors.black, fontSize: 17)),
-            onTap: () => {Navigator.of(context).pushNamed('/Perfil')},
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              )
+            },
           ),
           ListTile(
             leading:
